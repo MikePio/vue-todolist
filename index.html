@@ -25,9 +25,9 @@
             <button class="add-item">Aggiungi alla lista</button>
          </div>
          <ul class="item-list">
-            <li v-for="task in tasks" class="item">
-               <span @click = "task.done = !task.done" :class="{'done': task.done}">{{task.text}}</span>
-               <i class="fa fa-trash" aria-hidden="true"></i>
+            <li v-for="(task, index) in tasks" @click="task.done = !task.done" class="item">
+               <span :class="{'done': task.done}">{{task.text}}</span>
+               <i @click.stop="deleteTask(index)" class="fa fa-trash" aria-hidden="true"></i>
             </li>
             <!-- <li class="item">
                <span class="done">Task</span>

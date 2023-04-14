@@ -44,7 +44,9 @@ createApp({
    },
 
    methods:{
-
+      deleteTask(index){
+         this.tasks.splice(index, 1);
+      }
    }
 
 
