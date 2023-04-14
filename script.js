@@ -21,7 +21,7 @@ const {createApp} = Vue;
 createApp({
    data(){
       return{
-         message: 'test'
+         title: 'To Do List'
       }
    }
 }).mount('#app')
