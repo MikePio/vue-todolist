@@ -22,6 +22,7 @@ createApp({
    data(){
       return{
          title: 'To Do List',
+         newTaskString: '',
          tasks: [
             {
                text: 'Task 1',
@@ -46,6 +47,19 @@ createApp({
    methods:{
       deleteTask(index){
          this.tasks.splice(index, 1);
+      },
+
+      addTask(){
+         const newTask = {
+            text: this.newTaskString,
+            done: false
+         }
+         // in questo modo viene inserito alla fine
+         // this.tasks.push(newTask);
+         // in questo modo viene inserito all'inizio
+         this.tasks.unshift(newTask);
+         // reset input
+         this.newTaskString = '';
       }
    }
 
