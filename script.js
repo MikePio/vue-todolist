@@ -23,6 +23,7 @@ createApp({
       return{
          title: 'To Do List',
          newTaskString: '',
+         errorMessage: '',
          tasks: [
             {
                text: 'Task 1',
@@ -51,15 +52,24 @@ createApp({
 
       addTask(){
          const newTask = {
+            
             text: this.newTaskString,
             done: false
          }
-         // in questo modo viene inserito alla fine
-         // this.tasks.push(newTask);
-         // in questo modo viene inserito all'inizio
-         this.tasks.unshift(newTask);
-         // reset input
-         this.newTaskString = '';
+         if(this.newTaskString.length < 1){
+            console.log('errore');
+            this.errorMessage = 'Il campo di input è vuoto'
+            
+         }
+         else{
+            // in questo modo viene inserito alla fine
+            // this.tasks.push(newTask);
+            // in questo modo viene inserito all'inizio
+            this.tasks.unshift(newTask);
+            // reset input
+            this.newTaskString = '';
+            this.errorMessage = ''
+         }
       }
    }
 

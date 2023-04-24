@@ -24,6 +24,7 @@
             <input v-model="newTaskString" @keyup.enter="addTask" placeholder="Scrivi qui un compito da svolgere" type="text">
             <button @click="addTask" class="add-item">Aggiungi alla lista</button>
          </div>
+         <div class="error-message">{{errorMessage}}</div>
          <ul class="item-list">
             <li v-for="(task, index) in tasks" @click="task.done = !task.done" class="item">
                <span :class="{'done': task.done}">{{task.text}}</span>
