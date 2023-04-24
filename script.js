@@ -52,14 +52,15 @@ createApp({
 
       addTask(){
          const newTask = {
-            
             text: this.newTaskString,
             done: false
          }
          if(this.newTaskString.length < 1){
-            console.log('errore');
+            // console.log('Il campo di input è vuoto');
             this.errorMessage = 'Il campo di input è vuoto'
-            
+            setTimeout(() => {
+               this.errorMessage = ''
+            }, 5000);
          }
          else{
             // in questo modo viene inserito alla fine
